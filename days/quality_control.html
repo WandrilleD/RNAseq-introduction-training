@@ -674,10 +674,11 @@ To this end we provide links to each tool website. </p>
 <p><strong>Task:</strong> </p>
 <ul>
 <li>run FastQC analysis on the two datasets at: <code>/shared/data/DATA/Liu2015/</code> and <code>/shared/data/DATA/Ruhland2016</code>. </li>
-<li>Look at <strong>one</strong> of the QC report. What are your conclusions ? Would you want to perform some operations on the reads such as low-quality bases trimming, removal of adapters ?</li>
+<li>Look at at least one of the QC report. What are your conclusions ? Would you want to perform some operations on the reads such as low-quality bases trimming, removal of adapters ?</li>
 </ul>
 <p>Important points:</p>
 <ul>
+<li>in your script, don&rsquo;t forget to load fastqc : <code>ml fastqc</code></li>
 <li>there is no need to copy the read files to your home directory (in fact, don&rsquo;t do that: we won&rsquo;t have enough space left on the disk&hellip;)</li>
 <li>FastQC RAM requirements : 1Gb is more than enough</li>
 <li>FastQC time requirements : ~ 5min / read file </li>
