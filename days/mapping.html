@@ -448,6 +448,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#additionnal-pseudo-aligning-with-salmon" class="md-nav__link">
+    ADDITIONNAL : pseudo-aligning with salmon
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -570,6 +577,13 @@
         <li class="md-nav__item">
   <a href="#additionnal-star-2-pass" class="md-nav__link">
     ADDITIONNAL : STAR 2-Pass
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additionnal-pseudo-aligning-with-salmon" class="md-nav__link">
+    ADDITIONNAL : pseudo-aligning with salmon
   </a>
   
 </li>
@@ -779,13 +793,51 @@ fastqFILE=`sed -n ${SLURM_ARRAY_TASK_ID}p $sourceFILE`
 
 genomeDIR=/shared/data/DATA/Mouse_STAR_index
 
-$singularity_exec STAR --runThreadN 8 --genomeDir $genomeDIR \
+STAR --runThreadN 8 --genomeDir $genomeDIR \
                   --outSAMtype BAM SortedByCoordinate \
                   --outFileNamePrefix $outDIR/$fastqFILE.2Pass. \
                   --outReadsUnmapped Fastx --quantMode GeneCounts \
                   --sjdbFileChrStartEnd $outDIR/${fastqFILE}SJ.out.tab \
                   --readFilesIn $dataDIR/$fastqFILE --readFilesCommand zcat \
                   --outTmpDir /tmp/${SLURM_JOB_USER}_${SLURM_JOB_ID}
+</code></pre></div>
+</details>
+<h2 id="additionnal-pseudo-aligning-with-salmon">ADDITIONNAL : pseudo-aligning with salmon</h2>
+<p><a class="md-button" href="https://salmon.readthedocs.io/en/latest/salmon.html">salmon website</a></p>
+<p>salmon can allow you of quantify transcripts expression without explicitely aligning the sequenced reads onto the reference transcriptome, thus saving computational ressources.</p>
+<p>We refer you to the tool&rsquo;s documentation in order to see <a href="https://salmon.readthedocs.io/en/latest/salmon.html#preparing-transcriptome-indices-mapping-based-mode">how the reference index is computed</a>.</p>
+<p><strong>Task :</strong> run salmon to quantify the expression of either the Ruhland or Liu dataset. </p>
+<ul>
+<li>Use the tool documentation to craft your command line</li>
+<li>precomputed indices can be found in <code>/shared/data/Mouse_salmon_index</code> and <code>/shared/data/Human_salmon_index</code></li>
+</ul>
+<details class="done"><summary>script</summary><div class="highlight"><pre><span></span><code>#!/usr/bin/bash
+#SBATCH --job-name=salmonRuhland
+#SBATCH --time=01:00:00
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=30G
+#SBATCH -o salmon_ruhland2016.%a.o
+#SBATCH -e salmon_ruhland2016.%a.e
+#SBATCH --array 1-6%1
+
+ml salmon
+
+outDIR=salmon_Ruhland2016
+
+mkdir -p $outDIR
+
+dataDIR=/shared/data/DATA/Ruhland2016
+
+sourceFILE=Ruhland2016.fastqFiles.txt
+
+fastqFILE=`sed -n ${SLURM_ARRAY_TASK_ID}p $sourceFILE`
+
+genomeDIR=/shared/data/DATA/Mouse_salmon_index
+
+salmon quant -i $genomeDIR -l A \
+            -r $fastqFILE \
+            -p 8 --validateMappings --gcBias --seqBias\
+            -o $outDIR
 </code></pre></div>
 </details>
 <!--

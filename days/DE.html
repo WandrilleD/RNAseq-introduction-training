@@ -515,6 +515,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#additionnal-importing-counts-from-salmon-with-tximport" class="md-nav__link">
+    Additionnal : importing counts from salmon with tximport
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -600,6 +607,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#additionnal-importing-counts-from-salmon-with-tximport" class="md-nav__link">
+    Additionnal : importing counts from salmon with tximport
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -639,7 +653,7 @@
 <p>The analysis of the data once reads have been counted will be done on a Rstudio instance, using the language R and some relevant <a href="http://bioconductor.org/">Bioconductor</a> libraries.</p>
 <p>As you start your session on the Rstudio server, please make sure that you know where your data is situated with respect to your <strong>working directory</strong> (use <code>getwd()</code> and <code>setwd()</code> to respectively : know what your working is, and change it).</p>
 <h2 id="differential-expression-inference">Differential Expression Inference</h2>
-<p>Use either of these libraries to conduct a differential expression analysis on the Ruhland2016 and/or Liu2015 dataset.</p>
+<p>Use either edgeR or DESeq2 to conduct a differential expression analysis on the Ruhland2016 and/or Liu2015 dataset.</p>
 <p>You can find the expression matrices on the server at: <code>/shared/home/SHARED/Solutions/Ruhland2016/...</code> and <code>/shared/home/SHARED/Solutions/Liu2015/</code></p>
 <p>Or you may download them :</p>
 <p><a class="md-button" href="">Liu2015 count matrix</a></p>
@@ -996,6 +1010,14 @@ Beware that edgeR and DESeq2 use different column names in their result tables (
 </code></pre></div>
 <img alt="Reactomeenrich" src="../assets/images/DESeq2/Reactome_enrich.png" /></p>
 </details>
+<h2 id="additionnal-importing-counts-from-salmon-with-tximport">Additionnal : importing counts from salmon with <code>tximport</code></h2>
+<p>The <code>tximport</code> R  packages offers a fairly simple sets of function in order to be able to use the <strong>transcript-level</strong> expression quantifications of salmon or kallisto in a differential <strong>gene</strong> expression analysis.</p>
+<p><strong>Task :</strong> import salmon transcript-level quantification in R in order to perform a DE analysis on it using either edgeR or DESeq2
+<strong>Additional:</strong> compare the results with the ones obtained from STAR-aligned reads.</p>
+<ul>
+<li>The <a href="https://bioconductor.org/packages/release/bioc/vignettes/tximport/inst/doc/tximport.html">tximport vignette</a> is a very good guide for this task.</li>
+<li>If you have not computed them, you can find files with expression quantifications in : <code>/shared/data/...</code></li>
+</ul>
                 
               
               
