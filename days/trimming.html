@@ -586,6 +586,7 @@ If possible, we recommend to perform the mapping for both the raw data and the t
 <p><strong>Extra (if you have the time) :</strong> run a QC analysis on your trimmmed reads and compare with the raw ones.</p>
 <p>Important notes :</p>
 <ul>
+<li>when you do <code>ml trimmomatic</code>, you will have a little message which tells you how to launch the software</li>
 <li>Adapter sequences can be found in <code>/shared/data/DATA/adapters/</code></li>
 <li>Trimmomatic RAM requirements : ~0.5G / cpu</li>
 <li>Trimmomatic time requirements : ~ 10 min/ read file </li>
@@ -630,7 +631,7 @@ mkdir -p <span class="nv">$outDIR</span>
              <span class="nv">$dataDIR</span>/SRR1272187_2.fastq.gz <span class="se">\</span>
              <span class="nv">$outDIR</span>/SRR1272187_NFLV_trimmed_paired_1.fastq <span class="nv">$outDIR</span>/SRR1272187_NFLV_trimmed_unpaired_1.fastq <span class="se">\</span>
              <span class="nv">$outDIR</span>/SRR1272187_NFLV_trimmed_paired_2.fastq <span class="nv">$outDIR</span>/SRR1272187_NFLV_trimmed_unpaired_2.fastq <span class="se">\</span>
-             SLIDINGWINDOW:4:20 ILLUMINACLIP:/adapters/TruSeq3-PE.fa:2:30:10 
+             SLIDINGWINDOW:4:20 ILLUMINACLIP:/shared/data/DATA/adapters/TruSeq3-PE.fa:2:30:10 
 
 <span class="c1">## compressing the resulting fastq files to save some space.</span>
 gzip <span class="nv">$outDIR</span>/SRR1272187_NFLV_trimmed_paired_1.fastq

@@ -652,7 +652,7 @@ ml star
 
 mkdir -p STAR_references
 
-<span class="nv">$singularity_exec</span> STAR --runMode genomeGenerate <span class="se">\</span>
+STAR --runMode genomeGenerate <span class="se">\</span>
      --genomeDir STAR_references <span class="se">\</span>
      --genomeFastaFiles <span class="nv">$G_FASTA</span> <span class="se">\</span>
      --sjdbGTFfile <span class="nv">$G_GTF</span> <span class="se">\</span>
@@ -715,7 +715,7 @@ sourceFILE=Ruhland2016.fastqFiles.txt
 
 fastqFILE=`sed -n ${SLURM_ARRAY_TASK_ID}p $sourceFILE`
 
-genomeDIR=/shared/data/Mouse_STAR_index
+genomeDIR=/shared/data/DATA/Mouse_STAR_index
 
 STAR --runThreadN 8 --genomeDir $genomeDIR \
               --outSAMtype BAM SortedByCoordinate --outReadsUnmapped Fastx \
@@ -835,7 +835,7 @@ fastqFILE=`sed -n ${SLURM_ARRAY_TASK_ID}p $sourceFILE`
 genomeDIR=/shared/data/DATA/Mouse_salmon_index
 
 salmon quant -i $genomeDIR -l A \
-            -r $fastqFILE \
+            -r $dataDIR/$fastqFILE \
             -p 8 --validateMappings --gcBias --seqBias\
             -o $outDIR
 </code></pre></div>

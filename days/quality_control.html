@@ -760,7 +760,7 @@ ml fastqc
 <span class="nv">fastqFILE</span><span class="o">=</span><span class="sb">`</span>sed -n <span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span>p <span class="nv">$sourceFILE</span><span class="sb">`</span>
 
 mkdir -p FASTQC_Ruhland2016/
-<span class="nv">$singularity_exec</span> fastqc -o FASTQC_Ruhland2016/ <span class="nv">$dataDir</span>/<span class="nv">$fastqFILE</span>
+fastqc -o FASTQC_Ruhland2016/ <span class="nv">$dataDir</span>/<span class="nv">$fastqFILE</span>
 </code></pre></div>
 <p>When submitted with <code>sbatch</code>, this script will spawn 6 tasks in parallel, each with a different value of <code>${SLURM_ARRAY_TASK_ID}</code>.</p>
 <p>This is the most recommended option : this allows you to launch all your job in parallel with a single script.</p>
@@ -788,6 +788,8 @@ mkdir -p FASTQC_Ruhland2016/
 <ul>
 <li>MultiQC RAM requirements : 1Gb should be more than enough</li>
 <li>MultiQC time requirements : ~ 1min / read file </li>
+<li>Exceptionnally, there is no need to load multiqc as a module</li>
+<li>use <code>multiqc --help</code> to check the different options</li>
 </ul>
 <details class="done"><summary>sbatch scripts</summary><p>This is the script for the Ruhland2016 dataset. It presumes that the fastqc reports can be found in <code>FASTQC_Ruhland2016/</code></p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/bash</span>
