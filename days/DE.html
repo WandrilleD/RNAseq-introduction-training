@@ -683,8 +683,10 @@
 
 <span class="c1"># removing these first columns to keep only the sample counts</span>
 <span class="n">raw_counts</span> <span class="o">=</span> <span class="n">raw_counts</span><span class="p">[</span> <span class="p">,</span>  <span class="m">-1</span><span class="o">:</span><span class="m">-6</span>  <span class="p">]</span> 
+<span class="nf">names</span><span class="p">(</span> <span class="n">raw_counts</span><span class="p">)</span> <span class="o">=</span> <span class="nf">gsub</span><span class="p">(</span><span class="s">&#39;_.*&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="nf">gsub</span><span class="p">(</span><span class="s">&#39;.*.SRR[0-9]{7}_&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="nf">names</span><span class="p">(</span><span class="n">raw_counts</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+
 <span class="c1"># changing colomn names</span>
-<span class="nf">names</span><span class="p">(</span> <span class="n">raw_counts</span><span class="p">)</span> <span class="o">=</span> <span class="nf">gsub</span><span class="p">(</span><span class="s">&#39;_.*&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="nf">names</span><span class="p">(</span><span class="n">raw_counts</span><span class="p">)</span> <span class="p">)</span>
+<span class="nf">names</span><span class="p">(</span> <span class="n">raw_counts</span><span class="p">)</span> <span class="o">=</span> <span class="nf">gsub</span><span class="p">(</span><span class="s">&#39;_.*&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="nf">gsub</span><span class="p">(</span><span class="s">&#39;.*.SRR[0-9]{7}_&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="nf">names</span><span class="p">(</span><span class="n">raw_counts</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
 
 <span class="c1"># some checking of what we just read</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">raw_counts</span><span class="p">);</span> <span class="nf">tail</span><span class="p">(</span><span class="n">raw_counts</span><span class="p">);</span> <span class="nf">dim</span><span class="p">(</span><span class="n">raw_counts</span><span class="p">)</span>
@@ -1016,7 +1018,7 @@ Beware that edgeR and DESeq2 use different column names in their result tables (
 <strong>Additional:</strong> compare the results with the ones obtained from STAR-aligned reads.</p>
 <ul>
 <li>The <a href="https://bioconductor.org/packages/release/bioc/vignettes/tximport/inst/doc/tximport.html">tximport vignette</a> is a very good guide for this task.</li>
-<li>If you have not computed them, you can find files with expression quantifications in : <code>/shared/data/...</code></li>
+<li>If you have not computed them, you can find files with expression quantifications in : <code>/shared/data/Solutions/Liu2015/</code> and <code>/shared/data/Solutions/Ruhland2016/</code></li>
 </ul>
                 
               
