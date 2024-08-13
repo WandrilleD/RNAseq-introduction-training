@@ -1,11 +1,10 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8369162.svg)](https://doi.org/10.5281/zenodo.8369162)
 
 
 # RNAseq-introduction-training
 
-Webpage of the "Introduction to RNA-Seq: From quality control to pathway analysis - streamed" SIB course.
+"Introduction to bulk RNA-Seq" course, largely inspired by the SIB course on the same topic 
 
-[Go to the built webpage](https://sib-swiss.github.io/RNAseq-introduction-training/)
+[Go to the built webpage](https://wandrilled.github.io/RNAseq-introduction-training/)
 
 
 
@@ -40,12 +39,6 @@ mkdocs gh-deploy
 ```
 
 This will generate a webpage at:
-https://sib-swiss.github.io/RNAseq-introduction-training
+https://wandrilled.github.io/RNAseq-introduction-training
 
-
-## reference
-
-You can cite this course material using  :
-
-Alex SMITH, & Wandrille Duchemin. (2023, September 22). sib-swiss/RNAseq-introduction-training: September 2023 course. Zenodo. [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8369162.svg)](https://doi.org/10.5281/zenodo.8369162)
 

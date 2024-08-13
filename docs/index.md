@@ -1,4 +1,4 @@
-# Introduction to RNA-Seq: from quality control to pathway analysis
+# Introduction to bulk RNA-Seq
 
 ## Learning outcomes
 

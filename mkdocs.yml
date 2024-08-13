@@ -1,4 +1,4 @@
-site_name: Introduction to RNA-Seq - From quality control to pathway analysis
+site_name: Introduction to bulk RNA-Seq
 
 nav:
     - Home: index.md
@@ -6,6 +6,10 @@ nav:
     - Course schedule: course_schedule.md
     - Slides notes (draft): slides_notes.md
     - Cheatsheets: cheatsheets.md
+    - Day0 :
+        - R crash course : days/R_crash.md
+        - unix crash course: days/unix_crash.md
+
     - Day1 :
         - RNAseq - technologies and design : days/design.md
         - Server login + unix fresh up : days/server_login.md
@@ -20,14 +24,12 @@ nav:
 
 
 # Repository
-repo_name: sib-swiss/RNAseq-introduction-training
-repo_url: https://github.com/sib-swiss/RNAseq-introduction-training
+repo_name: WandrilleD/RNAseq-introduction-training
+repo_url: https://github.com/WandrilleD/RNAseq-introduction-training
 site_url: 
 
 theme:
   name: material
-  logo: assets/images/SIB_logo.svg
-  favicon: assets/images/SIB_logo.svg
 
 extra_css:
   - stylesheets/extra.css

@@ -5,7 +5,6 @@ On top of a thirst for knowledge, and a working Internet connection, here is wha
 
 ## NGS
 
-As announced in the [course registration webpage](https://www.sib.swiss/training/course/20220901_IRNAS),
 we expect participants to already have a basic knowledge in Next Generation Sequencing (NGS) techniques. 
 
 
@@ -24,19 +23,3 @@ A basic knowledge of the [R language](https://www.r-project.org/) is required to
 
 > If you are not familiar with R, we recommend the [SIB First Steps with R course](https://github.com/sib-swiss/first-steps-with-R-training), or you can pick one among [this list](https://github.com/sib-swiss/training-collection#r)
 
-
-## Software
-
-To replicate the technical condition of today's real-life data analysis, we will perform our computations on a distant HPC cluster.
-To access it: 
-
- * macOS / Linux : you can use your pre-installed terminal software.
- * Windows : you should install a terminal which lets you do secure shell connections (ssh; for instance [mobaXterm](https://mobaxterm.mobatek.net/)). 
-
-Additionally, a graphical client for file transfer to and from the distant server can be useful. MobaXterm integrates this functionality, so if you use it there is no need for additional software. 
-Otherwise, we recommend [FileZilla](https://filezilla-project.org/download.php?type=client).
-
-
-
-<!-- Suggestion: should we have some practical notes re: the teaching location?
-Coffee/snakcs/toilets...? Or should this be external to the course website? -->
