@@ -365,9 +365,10 @@ Write and execute scripts to run a MultiQC for the Liu2015 and the Ruhland2016 d
 	#!/usr/bin/bash
 	# multiQC  of Ruhland2016 fastq files
 	
-	multiqc -f 020_r_multiqc_Ruhland2016.html 010_d_fastqc/
+	multiqc -n 020_r_multiqc_Ruhland2016.html -f --title raw_fastq /data/Solutions/Ruhland2016/010_d_fastqc/
 	```
-  On the server, this script is also in `/data/Solutions/Ruhland2016/020_s_multiqc.sh`
+
+	On the server, this script is also in `/data/Solutions/Ruhland2016/020_s_multiqc.sh`
 
 
 ??? success "MultiQC script for Liu2015"
@@ -380,7 +381,7 @@ Write and execute scripts to run a MultiQC for the Liu2015 and the Ruhland2016 d
 	#!/usr/bin/bash
 	# multiQC  of Liu2015 fastq files
 	
-	multiqc -f 020_r_multiqc_Liu2015.html 010_d_fastqc/
+	multiqc -n 020_r_multiqc_Liu2015.html -f --title raw_fastq /data/Solutions/Liu2015/010_d_fastqc/
 	```
 
 	On the server, this script is also in `/data/Solutions/Liu2015/020_s_multiqc.sh`

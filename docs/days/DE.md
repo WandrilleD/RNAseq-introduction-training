@@ -1132,5 +1132,5 @@ The `tximport` R packages offers a fairly simple set of functions to get **trans
 **Additional:** compare the results with the ones obtained from STAR-aligned reads.
 
  * The [tximport vignette](https://bioconductor.org/packages/release/bioc/vignettes/tximport/inst/doc/tximport.html) is a very good guide for this task.
- * If you have not computed them, you can find files with expression quantifications in : `/data/Solutions/Liu2015/` and `/data/Solutions/Ruhland2016/`
+ * If you have not computed them, you can find files with expression quantifications in `/data/Solutions/Ruhland2016/`
 

@@ -43,7 +43,6 @@ We will be using the Ensembl references, with their accompanying GTF annotations
 
  * .fasta and .gtf files are in : `/data/DATA/Mouse_MT_genome/`.
  * create the index in the folder `041_d_STAR_mouseMT_reference`
- * the module name for this aligner is `star`.
  * this job should require less than 4Gb and 10min to run. 
 
 !!! info "STAR basic parameter for genome index generation"
@@ -297,6 +296,10 @@ We refer you to the tool's documentation in order to see [how the reference inde
  * Use the tool documentation to craft your command line.
  * precomputed indices can be found in `/data/DATA/Mouse_salmon_index` and `/data/DATA/Human_salmon_index`.
 
+!!! Warning
+
+	Please check with the teacher before you launch these tasks, because they require intensive resources (~6G of RAM and 40 minutes per fastq file).
+
 
 ??? success "script"
 
@@ -320,7 +323,7 @@ We refer you to the tool's documentation in order to see [how the reference inde
 	
 	 salmon quant -i $genomeDIR -l A \
 	              -r $dataDIR/$fastqFILE \
-	              -p 8 --validateMappings --gcBias --seqBias \
+	              -p 4 --validateMappings --gcBias --seqBias \
 	              -o $outDIR
 	done
 	

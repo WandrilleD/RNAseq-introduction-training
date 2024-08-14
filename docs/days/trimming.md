@@ -62,7 +62,7 @@ The [trimmomatic website](http://www.usadellab.org/cms/?page=trimmomatic) gives 
      - Adapter sequences can be found in `/data/DATA/adapters/TruSeq3-PE.fa` ([adapter sequence source](https://github.com/usadellab/Trimmomatic/tree/main/adapters)).
      - unlike fastqc, you will have to launch trimmomatic for each sample separately
      - to facilitate QC afterward, add the following at the end of your trimmomatic command (substituting `<sample name>`):
-		 		`2> 030_trim/trim_out.<sample name>.log`
+		 		`2> 030_d_trim/trim_out.<sample name>.log`
 		 		This will send part of the output of trimmomatic to a file in the same folder as the trimmed reads, which multiQC will be able to use afterward.
 
 
@@ -197,7 +197,7 @@ The [trimmomatic website](http://www.usadellab.org/cms/?page=trimmomatic) gives 
 	done
 	```
 
-	On the server, this script is also in	`/data/Solutions/mouseMT/030bis_s_trim_array.sh`
+	On the server, this script is also in	`/data/Solutions/mouseMT/030bis_s_trim_loop.sh`
 
 
 **Task 2:** 
