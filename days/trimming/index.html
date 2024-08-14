@@ -668,7 +668,7 @@ In fact, <strong>trimming can be detrimental</strong> to the number of successfu
 <li>Adapter sequences can be found in <code>/data/DATA/adapters/TruSeq3-PE.fa</code> (<a href="https://github.com/usadellab/Trimmomatic/tree/main/adapters">adapter sequence source</a>).</li>
 <li>unlike fastqc, you will have to launch trimmomatic for each sample separately</li>
 <li>to facilitate QC afterward, add the following at the end of your trimmomatic command (substituting <code>&lt;sample name&gt;</code>):
-            <code>2&gt; 030_trim/trim_out.&lt;sample name&gt;.log</code>
+            <code>2&gt; 030_d_trim/trim_out.&lt;sample name&gt;.log</code>
             This will send part of the output of trimmomatic to a file in the same folder as the trimmed reads, which multiQC will be able to use afterward.</li>
 </ul>
 </li>
@@ -792,7 +792,7 @@ do
                                           SLIDINGWINDOW:3:25 2&gt; 030_d_trim/030_l_trim_out.${SAMPLE}.log
 done
 </code></pre></div>
-<p>On the server, this script is also in   <code>/data/Solutions/mouseMT/030bis_s_trim_array.sh</code></p>
+<p>On the server, this script is also in   <code>/data/Solutions/mouseMT/030bis_s_trim_loop.sh</code></p>
 </details>
 <p><strong>Task 2:</strong> </p>
 <ul>
