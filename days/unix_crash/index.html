@@ -467,8 +467,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#more-less" class="md-nav__link">
-    more / less
+  <a href="#more" class="md-nav__link">
+    more
   </a>
   
 </li>
@@ -866,8 +866,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#more-less" class="md-nav__link">
-    more / less
+  <a href="#more" class="md-nav__link">
+    more
   </a>
   
 </li>
@@ -1139,10 +1139,10 @@ ls
 <p>I repeat: <strong>any deletion is final.</strong></p>
 </div>
 <p>let&rsquo;s create a copy of IRIS.csv to delete it:
-<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>IRIS.csv<span class="w"> </span>iris_copy.csv<span class="w"> </span>ls
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>IRIS.csv<span class="w"> </span>iris_copy.csv
 ls<span class="w"> </span>
 </code></pre></div></p>
-<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>iris_copy.csv
+<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>IRIS.csv
 </code></pre></div>
 <p>folder&rsquo;s can be deleted with the -r option
 <div class="highlight"><pre><span></span><code>rm -r data
@@ -1204,16 +1204,13 @@ ls -l diamonds.* ## all files starting with diamonds
 0.86,&quot;Premium&quot;,&quot;H&quot;,&quot;SI2&quot;,61,58,2757,6.15,6.12,3.74
 0.75,&quot;Ideal&quot;,&quot;D&quot;,&quot;SI2&quot;,62.2,55,2757,5.83,5.87,3.64
 </code></pre></div></p>
-<h3 id="more-less">more / less</h3>
+<h3 id="more">more</h3>
 <p><code>more</code> prints a file content in the terminal.
 When the file is large it prints a page, and you can press
  * <code>enter</code> : print one more line
  * <code>space</code> : print one more page
  * <code>q</code> : stop printing</p>
 <div class="highlight"><pre><span></span><code>more<span class="w"> </span>diamonds.csv
-</code></pre></div>
-<p><code>less</code> works like more, but the content do not stay in the terminal afterward</p>
-<div class="highlight"><pre><span></span><code>less<span class="w"> </span>diamonds.csv
 </code></pre></div>
 <h3 id="wc">wc</h3>
 <p>wc = <strong>w</strong>ord <strong>c</strong>ount : counts the number of lines, words, and characters in a file</p>
@@ -1237,8 +1234,6 @@ result:
 <p>Instead, in general you can get a list of arguments with <code>--help</code> (or sometimes <code>-h</code>)</p>
 <div class="highlight"><pre><span></span><code>ls --help
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>fastqc --help
-</code></pre></div>
 <h2 id="advanced-but-useful-stuff">advanced but useful stuff</h2>
 <h3 id="output-redirection">output redirection : &gt;</h3>
 <p><code>&gt;</code> let&rsquo;s you make it so that all standard output (but not error messages) of a command go to a file you specify</p>
@@ -1252,12 +1247,12 @@ more mouseMT.file_sizes.txt
 <p><code>Ctrl+C</code> stops the execution of whatever command is curently running.</p>
 <p>For example, the following command counts number of lines in big files, which takes a while.
 Let it run for a couple of seconds and then stop it with <code>Ctrl+C</code>
-<div class="highlight"><pre><span></span><code>wc<span class="w"> </span>-l<span class="w"> </span>/data/DATA/Liu2015/<span class="w"> </span>
+<div class="highlight"><pre><span></span><code>wc<span class="w"> </span>-l<span class="w"> </span>/data/DATA/Liu2015/*
 </code></pre></div></p>
 <h3 id="background-job">background job : &amp;</h3>
 <p>Ooften you want to launch a job which you know will take a while, but you&rsquo;d like to be able to continue working while it runs. </p>
 <p>By adding <code>&amp;</code> at the end of the command line the job will be executed in the background. </p>
-<div class="highlight"><pre><span></span><code>wc<span class="w"> </span>-l<span class="w"> </span>/data/DATA/Liu2015/<span class="w"> </span>&gt;<span class="w"> </span>Liu2015.file_sizes.txt<span class="w"> </span><span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>wc<span class="w"> </span>-l<span class="w"> </span>/data/DATA/Liu2015/*<span class="w"> </span>&gt;<span class="w"> </span>Liu2015.file_sizes.txt<span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
 <p>You can use <code>top</code> or <code>ps -u</code> to see your job running (with <code>top</code>, type <code>q</code> to exit).</p>
 <p>When the command is finished you will get in your terminal something like:</p>

@@ -1275,7 +1275,7 @@ Notice the last column, <code>Species</code>, which is a character vector and do
 <hr />
 <p>As we are starting to accumulate a lot of code, it would be a good moment to start a <strong>script</strong>.</p>
 <p>A script is simply a text file containing R commands.</p>
-<p>To create one, use <code>Ctrl+Shift+N</code>, or go to <code>Flie &gt; New File &gt; R script</code>.</p>
+<p>To create one, use <code>Ctrl+Alt+Shift+N</code>, or go to <code>Flie &gt; New File &gt; R script</code>.</p>
 <p>This will open a new file on the top-left section of Rstudio, where you can write some code.</p>
 <div class="admonition note">
 <p class="admonition-title">Important reminder</p>
@@ -1380,7 +1380,7 @@ These vector can be given to the <code>[]</code> operator which will select the 
 <div class="highlight"><pre><span></span><code><span class="n">iris</span><span class="o">$</span><span class="n">Species</span><span class="p">[</span><span class="w"> </span><span class="n">iris</span><span class="o">$</span><span class="n">Species</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&#39;setosa&#39;</span><span class="w"> </span><span class="p">]</span>
 </code></pre></div>
 <p>Petal lengths of the <code>Iris setosa</code> samples:
-<div class="highlight"><pre><span></span><code><span class="n">iris</span><span class="o">$</span><span class="n">Petal.length</span><span class="p">[</span><span class="w"> </span><span class="n">iris</span><span class="o">$</span><span class="n">Species</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&#39;setosa&#39;</span><span class="w"> </span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="n">iris</span><span class="o">$</span><span class="n">Petal.Length</span><span class="p">[</span><span class="w"> </span><span class="n">iris</span><span class="o">$</span><span class="n">Species</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&#39;setosa&#39;</span><span class="w"> </span><span class="p">]</span>
 </code></pre></div></p>
 <p>We can do the same for data frames.
  Because data frames are 2D tables (with rows and columns), the syntaxt is a bit different:
@@ -1437,7 +1437,7 @@ This can be done with :</p>
 <span class="nf">head</span><span class="p">(</span><span class="w"> </span><span class="n">virginica_iris</span><span class="w"> </span><span class="p">)</span>
 </code></pre></div>
 <p>Then we write it with <code>write.csv</code>:
-<div class="highlight"><pre><span></span><code><span class="nf">write.csv</span><span class="p">(</span><span class="w"> </span><span class="n">virginica_iris</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s">&#39;data/virginica.csv&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">row.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="w"> </span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">write.csv</span><span class="p">(</span><span class="w"> </span><span class="n">virginica_iris</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s">&#39;virginica.csv&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">row.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="w"> </span><span class="p">)</span>
 </code></pre></div></p>
 <p><code>write.table</code> exists as well, and generally they have the same arguments as <code>read.csv</code> and <code>read.table</code>.</p>
 <h3 id="creating-new-columns">Creating new columns</h3>
@@ -1613,7 +1613,8 @@ and figures often change a lot before the final version of the manuscript.</p>
 </ol>
 <details class="success">
 <summary>Solution</summary>
-<div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="n">df</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">log2FoldChange</span><span class="w"> </span><span class="p">,</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">padj</span><span class="w"> </span><span class="p">)</span><span class="w">  </span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="n">df</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">log2FoldChange</span><span class="w"> </span><span class="p">,</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">padj</span><span class="w"> </span><span class="p">)</span><span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_point</span><span class="p">()</span>
 </code></pre></div>
 </details>
 <ol start="3">

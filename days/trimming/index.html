@@ -680,7 +680,7 @@ In fact, <strong>trimming can be detrimental</strong> to the number of successfu
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>trimmomatic is a Java-based program, and thus must be run by passing its .jar file to the Java interpreter:</p>
-<div class="highlight"><pre><span></span><code>java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.39.jar
+<div class="highlight"><pre><span></span><code>trimmomatic
 </code></pre></div>
 </div>
 <details class="success">
@@ -709,54 +709,54 @@ mkdir<span class="w"> </span>-p<span class="w"> </span>030_d_trim
 
 <span class="c1">## by ending a line with \ we can continue the same command on the line below</span>
 
-java<span class="w"> </span>-jar<span class="w"> </span><span class="nv">$EBROOTTRIMMOMATIC</span>/trimmomatic-0.39.jar<span class="w"> </span>SE<span class="w"> </span>-phred33<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span><span class="nv">$INPUT_FOLDER</span>/sample_a1.fastq<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>030_d_trim/sample_a1.trimmed.fastq<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>ILLUMINACLIP:/data/DATA/adapters/TruSeq3-PE.fa:2:30:10<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>SLIDINGWINDOW:3:25<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>030_d_trim/030_l_trim_out.sample_a1.log
+trimmomatic<span class="w"> </span>SE<span class="w"> </span>-phred33<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span><span class="nv">$INPUT_FOLDER</span>/sample_a1.fastq<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>030_d_trim/sample_a1.trimmed.fastq<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>ILLUMINACLIP:/data/DATA/adapters/TruSeq3-PE.fa:2:30:10<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>SLIDINGWINDOW:3:25<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>030_d_trim/030_l_trim_out.sample_a1.log
 
-java<span class="w"> </span>-jar<span class="w"> </span><span class="nv">$EBROOTTRIMMOMATIC</span>/trimmomatic-0.39.jar<span class="w"> </span>SE<span class="w"> </span>-phred33<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span><span class="nv">$INPUT_FOLDER</span>/sample_a2.fastq<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>030_d_trim/sample_a2.trimmed.fastq<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>ILLUMINACLIP:/data/DATA/adapters/TruSeq3-PE.fa:2:30:10<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>SLIDINGWINDOW:3:25<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>030_d_trim/030_l_trim_out.sample_a2.log
+trimmomatic<span class="w"> </span>SE<span class="w"> </span>-phred33<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span><span class="nv">$INPUT_FOLDER</span>/sample_a2.fastq<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>030_d_trim/sample_a2.trimmed.fastq<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>ILLUMINACLIP:/data/DATA/adapters/TruSeq3-PE.fa:2:30:10<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>SLIDINGWINDOW:3:25<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>030_d_trim/030_l_trim_out.sample_a2.log
 
-java<span class="w"> </span>-jar<span class="w"> </span><span class="nv">$EBROOTTRIMMOMATIC</span>/trimmomatic-0.39.jar<span class="w"> </span>SE<span class="w"> </span>-phred33<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span><span class="nv">$INPUT_FOLDER</span>/sample_a3.fastq<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>030_d_trim/sample_a3.trimmed.fastq<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>ILLUMINACLIP:/data/DATA/adapters/TruSeq3-PE.fa:2:30:10<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>SLIDINGWINDOW:3:25<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>030_d_trim/030_l_trim_out.sample_a3.log
+trimmomatic<span class="w"> </span>SE<span class="w"> </span>-phred33<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span><span class="nv">$INPUT_FOLDER</span>/sample_a3.fastq<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>030_d_trim/sample_a3.trimmed.fastq<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>ILLUMINACLIP:/data/DATA/adapters/TruSeq3-PE.fa:2:30:10<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>SLIDINGWINDOW:3:25<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>030_d_trim/030_l_trim_out.sample_a3.log
 
-java<span class="w"> </span>-jar<span class="w"> </span><span class="nv">$EBROOTTRIMMOMATIC</span>/trimmomatic-0.39.jar<span class="w"> </span>SE<span class="w"> </span>-phred33<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span><span class="nv">$INPUT_FOLDER</span>/sample_a4.fastq<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>030_d_trim/sample_a4.trimmed.fastq<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>ILLUMINACLIP:/data/DATA/adapters/TruSeq3-PE.fa:2:30:10<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>SLIDINGWINDOW:3:25<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>030_d_trim/030_l_trim_out.sample_a4.log
+trimmomatic<span class="w"> </span>SE<span class="w"> </span>-phred33<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span><span class="nv">$INPUT_FOLDER</span>/sample_a4.fastq<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>030_d_trim/sample_a4.trimmed.fastq<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>ILLUMINACLIP:/data/DATA/adapters/TruSeq3-PE.fa:2:30:10<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>SLIDINGWINDOW:3:25<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>030_d_trim/030_l_trim_out.sample_a4.log
 
 
-java<span class="w"> </span>-jar<span class="w"> </span><span class="nv">$EBROOTTRIMMOMATIC</span>/trimmomatic-0.39.jar<span class="w"> </span>SE<span class="w"> </span>-phred33<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span><span class="nv">$INPUT_FOLDER</span>/sample_b1.fastq<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>030_d_trim/sample_b1.trimmed.fastq<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>ILLUMINACLIP:/data/DATA/adapters/TruSeq3-PE.fa:2:30:10<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>SLIDINGWINDOW:3:25<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>030_d_trim/030_l_trim_out.sample_b1.log
+trimmomatic<span class="w"> </span>SE<span class="w"> </span>-phred33<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span><span class="nv">$INPUT_FOLDER</span>/sample_b1.fastq<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>030_d_trim/sample_b1.trimmed.fastq<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>ILLUMINACLIP:/data/DATA/adapters/TruSeq3-PE.fa:2:30:10<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>SLIDINGWINDOW:3:25<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>030_d_trim/030_l_trim_out.sample_b1.log
 
-java<span class="w"> </span>-jar<span class="w"> </span><span class="nv">$EBROOTTRIMMOMATIC</span>/trimmomatic-0.39.jar<span class="w"> </span>SE<span class="w"> </span>-phred33<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span><span class="nv">$INPUT_FOLDER</span>/sample_b2.fastq<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>030_d_trim/sample_b2.trimmed.fastq<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>ILLUMINACLIP:/data/DATA/adapters/TruSeq3-PE.fa:2:30:10<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>SLIDINGWINDOW:3:25<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>030_d_trim/030_l_trim_out.sample_b2.log
+trimmomatic<span class="w"> </span>SE<span class="w"> </span>-phred33<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span><span class="nv">$INPUT_FOLDER</span>/sample_b2.fastq<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>030_d_trim/sample_b2.trimmed.fastq<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>ILLUMINACLIP:/data/DATA/adapters/TruSeq3-PE.fa:2:30:10<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>SLIDINGWINDOW:3:25<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>030_d_trim/030_l_trim_out.sample_b2.log
 
-java<span class="w"> </span>-jar<span class="w"> </span><span class="nv">$EBROOTTRIMMOMATIC</span>/trimmomatic-0.39.jar<span class="w"> </span>SE<span class="w"> </span>-phred33<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span><span class="nv">$INPUT_FOLDER</span>/sample_b3.fastq<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>030_d_trim/sample_b3.trimmed.fastq<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>ILLUMINACLIP:/data/DATA/adapters/TruSeq3-PE.fa:2:30:10<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>SLIDINGWINDOW:3:25<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>030_d_trim/030_l_trim_out.sample_b3.log
+trimmomatic<span class="w"> </span>SE<span class="w"> </span>-phred33<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span><span class="nv">$INPUT_FOLDER</span>/sample_b3.fastq<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>030_d_trim/sample_b3.trimmed.fastq<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>ILLUMINACLIP:/data/DATA/adapters/TruSeq3-PE.fa:2:30:10<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>SLIDINGWINDOW:3:25<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>030_d_trim/030_l_trim_out.sample_b3.log
 
-java<span class="w"> </span>-jar<span class="w"> </span><span class="nv">$EBROOTTRIMMOMATIC</span>/trimmomatic-0.39.jar<span class="w"> </span>SE<span class="w"> </span>-phred33<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span><span class="nv">$INPUT_FOLDER</span>/sample_b4.fastq<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>030_d_trim/sample_b4.trimmed.fastq<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>ILLUMINACLIP:/data/DATA/adapters/TruSeq3-PE.fa:2:30:10<span class="w"> </span><span class="se">\</span>
-<span class="w">                                         </span>SLIDINGWINDOW:3:25<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>030_d_trim/030_l_trim_out.sample_b4.log
+trimmomatic<span class="w"> </span>SE<span class="w"> </span>-phred33<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span><span class="nv">$INPUT_FOLDER</span>/sample_b4.fastq<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>030_d_trim/sample_b4.trimmed.fastq<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>ILLUMINACLIP:/data/DATA/adapters/TruSeq3-PE.fa:2:30:10<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>SLIDINGWINDOW:3:25<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>030_d_trim/030_l_trim_out.sample_b4.log
 </code></pre></div>
 <p>On the server, this script is also in <code>/data/Solutions/mouseMT/030_s_trim.sh</code></p>
 </details>
@@ -785,11 +785,11 @@ INPUT_FOLDER=/data/DATA/mouseMT
 ## each job grab a specific line from sampleNames.txt
 for SAMPLE in `cat sampleNames.txt`
 do
- java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.39.jar SE -phred33 \
-                                          $INPUT_FOLDER/${SAMPLE}.fastq \
-                                          030_d_trim/${SAMPLE}.trimmed.fastq \
-                                          ILLUMINACLIP:/data/DATA/adapters/TruSeq3-PE.fa:2:30:10 \
-                                          SLIDINGWINDOW:3:25 2&gt; 030_d_trim/030_l_trim_out.${SAMPLE}.log
+ trimmomatic SE -phred33 \
+              $INPUT_FOLDER/${SAMPLE}.fastq \
+              030_d_trim/${SAMPLE}.trimmed.fastq \
+              ILLUMINACLIP:/data/DATA/adapters/TruSeq3-PE.fa:2:30:10 \
+              SLIDINGWINDOW:3:25 2&gt; 030_d_trim/030_l_trim_out.${SAMPLE}.log
 done
 </code></pre></div>
 <p>On the server, this script is also in   <code>/data/Solutions/mouseMT/030bis_s_trim_loop.sh</code></p>
