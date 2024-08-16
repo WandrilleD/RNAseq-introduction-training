@@ -33,6 +33,10 @@ Follow the teacher's instructions to get the rstudio server address, as well as 
 
 ## Start a terminal on the server
 
+
+![a view of Rstudio's terminal](../assets/images/rstudio_terminal.png)
+
+
 ## Using command line on the cluster
 
 Now that you are in the head node, it is time to get acquainted with your environment and to prepare the upcoming practicals. 
@@ -107,12 +111,6 @@ The directory `/data/` contains data and solutions for most practicals.
     output:
     ```
     #!/usr/bin/bash
-    #SBATCH --job-name=fastqc_mouseMT
-    #SBATCH --time=01:00:00
-    #SBATCH --cpus-per-task=1
-    #SBATCH --mem=1G
-    #SBATCH -o 010_l_fastqc_mouseMT.o
-    
     
     # creating the output folder
     mkdir -p 010_d_fastqc/
@@ -132,7 +130,7 @@ To edit files on the distant server, we will use the Rstudio file editor. It is 
     Alternatively, we could use command line editor `nano`. It is far from the most complete or efficient one, but it can be found on most servers, and is arguably among the easiest command-line file editor to start with.
 
 
-To start editing a file named `test.txt`, in Rstudio go to `File > New File > Text File`, or use the shortcut `Ctrl+Shift+N`
+To start editing a file named `test.txt`, in Rstudio go to `File > New File > Text File`, or use the shortcut `Ctrl+Alt+Shift+N`
 
 
 ![Rstudio screenshot](../assets/images/rstudio_new_file_screenshot.png)
@@ -155,6 +153,8 @@ Whether you want to transfer some data to the server or retrieve the results of 
 
 
 Fortunately, Rstudio provides an easy way to do this.
+
+![a view of Rstudio's interface for download and upload](../assets/images/rstudio_download.png)
 
 
 !!! note
@@ -225,6 +225,44 @@ sh myScript.sh
     Be sure to execute the script from the folder that it is in. Otherwise you would have to specify in which folder to find the script using its path.
 
 This should have printed some information about the size of `/data/` subfolders to the screen.
+
+
+## Activate the conda environment containing bioinformatics software
+
+As it stands, the terminal you are currently using does not have access to bioinformatics software:
+
+```sh 
+fastqc --help
+```
+
+results in the error : `Command 'fastqc' not found, ...`
+
+Indeed, bioinformatics tools are not installed by default on the server.
+
+Here, we have prepared the bioinformatics software in a [conda environment](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html) (conda environments provide a useful way to manage software stacks across plateform).
+
+
+So, first we need to initialize conda:
+
+```sh
+conda init
+```
+Then, for the changes to take place we need to start a new terminal :
+
+![Rstudio : showing button to start a new terminal](../assets/images/rstudio_new_terminal.png)
+
+Once this is done, you can notice that now you terminal line starts with `(base)`. This is a sign that conda is activated and that you are currently using its default environment.
+
+So finally we can activate the environment containing tools, which is called `ngs-tools`:
+```sh
+conda activate ngs-tools
+```
+
+Now when you run the following command you should see the fastqc help:
+```sh 
+fastqc --help
+```
+
 
 
 # ANNEX : HPC clusters

@@ -911,7 +911,7 @@ You may play with either of the following datasets:
 	library(ggplot2)
 
 	# reading the counts files - adapt the file path to your situation
-	raw_counts <- read.table('.../Ruhland2016_featureCount_result.counts' , 
+	raw_counts <- read.table('/data/Solutions/Ruhland2016/countFiles/featureCounts_Ruhland2016.counts.txt' , 
 	           skip=1 , sep="\t" , header=T)
 	
 	# setting up row names as ensembl gene ids

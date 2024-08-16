@@ -387,7 +387,7 @@ As we are starting to accumulate a lot of code, it would be a good moment to sta
 
 A script is simply a text file containing R commands.
 
-To create one, use `Ctrl+Shift+N`, or go to `Flie > New File > R script`.
+To create one, use `Ctrl+Alt+Shift+N`, or go to `Flie > New File > R script`.
 
 This will open a new file on the top-left section of Rstudio, where you can write some code.
 
@@ -532,7 +532,7 @@ iris$Species[ iris$Species == 'setosa' ]
 
 Petal lengths of the `Iris setosa` samples:
 ```R
-iris$Petal.length[ iris$Species == 'setosa' ]
+iris$Petal.Length[ iris$Species == 'setosa' ]
 ```
 
 We can do the same for data frames.
@@ -609,7 +609,7 @@ head( virginica_iris )
 
 Then we write it with `write.csv`:
 ```R
-write.csv( virginica_iris , 'data/virginica.csv' , row.names = FALSE )
+write.csv( virginica_iris , 'virginica.csv' , row.names = FALSE )
 ```
 
 `write.table` exists as well, and generally they have the same arguments as `read.csv` and `read.table`.
@@ -863,7 +863,8 @@ We are going, step-by-step, to build a [volcano plot](https://en.wikipedia.org/w
 
 ??? success "Solution"
 	```R
-	ggplot(df , aes(x = log2FoldChange ,y = padj )  )
+	ggplot(df , aes(x = log2FoldChange ,y = padj )  ) +
+    geom_point()
 	```
 
  3. update this plot using the function : scale_y_log10() . what happens?

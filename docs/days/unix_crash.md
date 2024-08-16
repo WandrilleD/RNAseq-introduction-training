@@ -208,12 +208,12 @@ ls
 
 let's create a copy of IRIS.csv to delete it:
 ```sh
-cp IRIS.csv iris_copy.csv ls
+cp IRIS.csv iris_copy.csv
 ls 
 ```
 
 ```sh
-rm iris_copy.csv
+rm IRIS.csv
 ```
 
 folder's can be deleted with the -r option
@@ -303,7 +303,7 @@ tail -n 3 diamonds.csv
 0.75,"Ideal","D","SI2",62.2,55,2757,5.83,5.87,3.64
 ```
 
-### more / less
+### more 
 
 `more` prints a file content in the terminal.
 When the file is large it prints a page, and you can press
@@ -316,12 +316,6 @@ When the file is large it prints a page, and you can press
 more diamonds.csv
 ```
 
-`less` works like more, but the content do not stay in the terminal afterward
-
-
-```sh
-less diamonds.csv
-```
 
 ### wc
 
@@ -362,9 +356,6 @@ ls --help
 ```
 
 
-```
-fastqc --help
-```
 
 ## advanced but useful stuff
 
@@ -390,7 +381,7 @@ Sometimes you will launch a job, which may take a while and you will realize, wi
 For example, the following command counts number of lines in big files, which takes a while.
 Let it run for a couple of seconds and then stop it with `Ctrl+C`
 ```sh
-wc -l /data/DATA/Liu2015/ 
+wc -l /data/DATA/Liu2015/*
 ```
 
 ### background job : &
@@ -401,7 +392,7 @@ By adding `&` at the end of the command line the job will be executed in the bac
 
 
 ```sh
-wc -l /data/DATA/Liu2015/ > Liu2015.file_sizes.txt &
+wc -l /data/DATA/Liu2015/* > Liu2015.file_sizes.txt &
 ```
 
 You can use `top` or `ps -u` to see your job running (with `top`, type `q` to exit).
